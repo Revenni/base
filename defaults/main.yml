@@ -1,0 +1,28 @@
+---
+# defaults file for revenni.base
+
+# Unattended configuration
+unattended_enabled: 1
+unattended_email: emailxya@domain.com
+unattended_email_errors_only: true
+unattended_reboot: false
+unattended_reboot_time: 21:00
+unattended_remove_deps: true
+
+# Postfix configuration.  To generate vault password for postfix_sasl_password
+# run the following command:
+#
+# echo -n "password" | ansible-vault encrypt_string --stdin-name 'postfix_sasl_password'
+
+postfix_enabled: 0
+postfix_relayhost: "[smtp.gmail.com]:587"
+postfix_interfaces: 127.0.0.1
+postfix_protocols: ipv4
+postfix_sasl_username: relay@somedomain.com
+postfix_sasl_password: !vault |
+          $ANSIBLE_VAULT;1.1;AES256
+          64656136373134396633316238663763623161643833626532366533656337396263646564383234
+          3061643235303039656364313461613230343161336438350a323235373863393832393364623538
+          65356662653261396238623162303037336562333735323963666137396665306363386266323662
+          3839366639313562350a656431633531386161393936306236333034316434383362346635303336
+          6238

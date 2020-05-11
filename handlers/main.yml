@@ -1,0 +1,11 @@
+---
+# handlers file for revenni.base
+
+- name: postfix | sasl_postmap
+  shell: postmap /etc/postfix/sasl/sasl_passwd
+
+- name: postfix | restart
+  systemd:
+    name: postfix
+    state: restarted
+    enabled: yes

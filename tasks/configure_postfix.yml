@@ -1,0 +1,20 @@
+---
+- name: postfix | sasl_passwd
+  blockinfile:
+    path: /etc/postfix/sasl/sasl_passwd
+    create: yes
+    block: |
+      {{ postfix_relayhost }} {{ postfix_sasl_username }}:{{ postfix_sasl_password }}
+    mode: 0600
+    owner: root
+    group: root
+  notify: postfix | sasl_postmap
+
+- name: postfix | main.cf creation
+  template:
+    src: postfix_main.cf.j2
+    dest: /etc/postfix/main.cf
+    mode: 0644
+    owner: root
+    group: root
+  notify: postfix | restart

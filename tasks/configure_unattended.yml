@@ -1,0 +1,16 @@
+---
+- name: unattended | configuration
+  template:
+    src: 50unattended_upgrades.j2
+    dest: /etc/apt/apt.conf.d/50unattended-upgrades
+    mode: 0644
+    owner: root
+    group: root
+
+- name: unattended | enabling
+  template:
+    src: 20auto_upgrades.j2
+    dest: /etc/apt/apt.conf.d/20auto-upgrades
+    mode: 0644
+    owner: root
+    group: root

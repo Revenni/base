@@ -1,0 +1,15 @@
+---
+# tasks file for revenni.base
+#
+
+- name: unattended upgrades | enabled?
+  block:
+    - import_tasks: install_unattended.yml
+    - import_tasks: configure_unattended.yml
+  when: unattended_enabled==1
+
+- name: postfix | enabled?
+  block:
+    - import_tasks: install_postfix.yml
+    - import_tasks: configure_postfix.yml
+  when: postfix_enabled==1
