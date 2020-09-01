@@ -1,7 +1,7 @@
 ---
 - name: unattended | configuration
   template:
-    src: 50unattended_upgrades.j2
+    src: 50unattended_upgrades-{{ ansible_distribution | lower }}.j2
     dest: /etc/apt/apt.conf.d/50unattended-upgrades
     mode: 0644
     owner: root

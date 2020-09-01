@@ -1,8 +1,9 @@
 revenni.base
 =========
 
-Ansible role providing minimum configuration for Ubuntu machines.  Unattended updates and postfix configuration for external relay host.
+Ansible role providing minimum configuration for Debian / Ubuntu machines.  Unattended updates and postfix configuration for external relay host.
 
+[![Platforms](http://img.shields.io/badge/platforms-debian-lightgrey.svg?style=flat)](#)
 [![Platforms](http://img.shields.io/badge/platforms-ubuntu-lightgrey.svg?style=flat)](#)
 [![Licence](https://img.shields.io/badge/Licence-MIT-blue.svg)](https://tldrlegal.com/license/mit-license)
 
@@ -46,8 +47,13 @@ Example Playbook
 
 License
 -------
-
 MIT
+
+Changelog
+---------
+09/01/2020 v1.0.1 Added support for Debian unattended.  Moving away from Ubuntu.
+05/11/2020 v1.0.0 First release, ubuntu minimum config.
+
 
 Author Information
 ------------------
