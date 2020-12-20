@@ -2,7 +2,14 @@
 # handlers file for revenni.base
 
 - name: postfix | sasl_postmap
-  command: postmap /etc/postfix/sasl/sasl_passwd
+  command:
+    cmd: postmap /etc/postfix/sasl/sasl_passwd
+    creates: /etc/postfix/sasl/sasl_passwd.db
+
+- name: postfix | sender_canonical
+  command:
+    cmd: postmap /etc/postfix/sender_canonical
+    creates: /etc/postfix/sender_canonical.db
 
 - name: postfix | restart
   systemd:

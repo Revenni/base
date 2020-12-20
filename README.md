@@ -28,6 +28,7 @@ Role Variables
 * ```postfix_relayhost``` ([smtp.gmail.com]:587) - mailserver to connect to
 * ```postfix_interfaces``` (127.0.0.1) - only used for system relaying
 * ```postfix_protocols``` (ipv4) - ipv4
+* ```postfix_sender_canonical``` () - specify {{ postfix_sasl_username }} to force mail to be sent from the username we authenticate as.  Exchange enforces this.
 * ```postfix_sasl_username``` (relay@somedomain.com) - username for sasl auth
 * ```postfix_sasl_password``` (vault string) - replace with output of ```echo -n "password" | ansible-vault encrypt_string --stdin-name 'postfix_sasl_password'```
 
@@ -51,8 +52,9 @@ MIT
 
 Changelog
 ---------
-09/01/2020 v1.0.1 Added support for Debian unattended.  Moving away from Ubuntu.
-05/11/2020 v1.0.0 First release, ubuntu minimum config.
+12/20/2020 v1.0.2 Added sender_canonical support.  Disabled by default, define postfix_sender_canonical to enable.\
+09/01/2020 v1.0.1 Added support for Debian unattended.  Moving away from Ubuntu.\
+05/11/2020 v1.0.0 First release, ubuntu minimum config.\
 
 
 Author Information

@@ -18,6 +18,7 @@ postfix_enabled: 0
 postfix_relayhost: "[smtp.gmail.com]:587"
 postfix_interfaces: 127.0.0.1
 postfix_protocols: ipv4
+#postfix_sender_canonical: "{{ postfix_sasl_username }}"
 postfix_sasl_username: relay@somedomain.com
 postfix_sasl_password: !vault |
           $ANSIBLE_VAULT;1.1;AES256

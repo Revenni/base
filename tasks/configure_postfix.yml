@@ -10,7 +10,17 @@
     group: root
   notify: postfix | sasl_postmap
 
-- name: postfix | main.cf creation
+- name: postfix | sender_canonical
+  template:
+    src: postfix_sender_canonical.j2
+    dest: /etc/postfix/sender_canonical
+    mode: 0600
+    owner: root
+    group: root
+  notify: postfix | sender_canonical
+  when: postfix_sender_canonical is defined
+
+- name: postfix | main.cf generation
   template:
     src: postfix_main.cf.j2
     dest: /etc/postfix/main.cf

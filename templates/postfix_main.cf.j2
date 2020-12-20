@@ -39,6 +39,11 @@ smtp_tls_security_level = encrypt
 # Location of CA certificates
 smtp_tls_CAfile = /etc/ssl/certs/ca-certificates.crt
 
+{% if postfix_sender_canonical is defined %}
+# mail must be sent from {{ postfix_sender_canonical }}
+sender_canonical_maps = regexp:/etc/postfix/sender_canonical
+
+{% endif %}
 # See /usr/share/doc/postfix/TLS_README.gz in the postfix-doc package for
 # information on enabling SSL in the smtp client.
 
