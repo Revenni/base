@@ -29,7 +29,11 @@ Unattended-Upgrade::Origins-Pattern {
         "origin=Debian,codename=${distro_codename}-updates";
 //      "origin=Debian,codename=${distro_codename}-proposed-updates";
         "origin=Debian,codename=${distro_codename},label=Debian";
+{% if ansible_distribution_major_version is version('11', '>=') %}
+        "origin=Debian,codename=${distro_codename}-security,label=Debian-Security";
+{% else %}
         "origin=Debian,codename=${distro_codename},label=Debian-Security";
+{% endif %}
 
         // Archive or Suite based matching:
         // Note that this will silently match a different release after

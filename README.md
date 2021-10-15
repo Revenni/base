@@ -52,9 +52,10 @@ MIT
 
 Changelog
 ---------
+10/15/2021 v1.0.3 Added unattended support for bullseye security origin.
 12/20/2020 v1.0.2 Added sender_canonical support.  Disabled by default, define postfix_sender_canonical to enable.\
 09/01/2020 v1.0.1 Added support for Debian unattended.  Moving away from Ubuntu.\
-05/11/2020 v1.0.0 First release, ubuntu minimum config.\
+05/11/2020 v1.0.0 First release, ubuntu minimum config.
 
 
 Author Information
