@@ -52,6 +52,7 @@ MIT
 
 Changelog
 ---------
+10/17/2021 v1.0.4 Added libsasl2-modules as postfix dep.\
 10/15/2021 v1.0.3 Added unattended support for bullseye security origin.\
 12/20/2020 v1.0.2 Added sender_canonical support.  Disabled by default, define postfix_sender_canonical to enable.\
 09/01/2020 v1.0.1 Added support for Debian unattended.  Moving away from Ubuntu.\

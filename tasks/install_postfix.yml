@@ -1,5 +1,7 @@
 ---
 - name: postfix | install
   apt:
-    name: postfix
+    pkg:
+      - postfix
+      - libsasl2-modules
     state: present
